@@ -109,6 +109,8 @@ EOF
 # deb http://download.proxmox.com/debian/ceph-quincy bookworm no-subscription
 # deb https://enterprise.proxmox.com/debian/ceph-reef bookworm enterprise
 # deb http://download.proxmox.com/debian/ceph-reef bookworm no-subscription
+# deb https://enterprise.proxmox.com/debian/ceph-squid bookworm enterprise
+# deb http://download.proxmox.com/debian/ceph-squid bookworm no-subscription
 EOF
       msg_ok "Corrected 'ceph package repositories'"
       ;;
@@ -231,7 +233,7 @@ while true; do
   esac
 done
 
-if ! pveversion | grep -Eq "pve-manager/8.[0-2]"; then
+if ! pveversion | grep -Eq "pve-manager/8.[0-9]"; then
   msg_error "This version of Proxmox Virtual Environment is not supported"
   echo -e "Requires Proxmox Virtual Environment Version 8.0 or later."
   echo -e "Exiting..."
